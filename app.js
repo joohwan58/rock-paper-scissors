@@ -44,4 +44,3 @@ function game() {
         console.log(playRound(player, getComputerChoice()))
     }
 }
-game()

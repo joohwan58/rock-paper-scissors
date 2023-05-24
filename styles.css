@@ -1,0 +1,15 @@
+h1 {
+    text-align: center;
+}
+
+.options img {
+    width: 200px;
+    height: auto;
+}
+
+.options {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+}

@@ -12,7 +12,7 @@ function getComputerChoice() {
             break;
     }
 }
-function playRound(player, computer) {
+function gameLogic(player, computer) {
     switch (player+computer) {
         case "rockscissors":
             return "You win! Rock beats scissors"
@@ -37,10 +37,21 @@ function playRound(player, computer) {
             break;
     }
 }
-function game() {
-    let player
-    for (i = 0; i < 5; i++) {
-        player = prompt("Play rps, enter option")
-        console.log(playRound(player, getComputerChoice()))
-    }
+const result = document.querySelector('.result');
+const computer = document.querySelector('.computer');
+const computerChoiceImageContainer = document.querySelector('.computer-choice');
+const computerChoiceImage = document.createElement('img');
+function displayResult(option) {
+    computer.textContent = "Computer chose:"
+    let computerChoice = getComputerChoice();
+    result.textContent = gameLogic(option, computerChoice);
+    computerChoiceImage.src = `/images/${computerChoice}.jpg`;
+    console.log(computerChoiceImage.src);
+    computerChoiceImageContainer.appendChild(computerChoiceImage);
 }
+const options = document.querySelectorAll(".options div");
+options.forEach((option) => {
+    option.addEventListener('click', () => {
+        displayResult(option.className);
+    })
+});

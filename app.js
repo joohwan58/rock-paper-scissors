@@ -45,7 +45,7 @@ function displayResult(option) {
     computer.textContent = "Computer chose:"
     let computerChoice = getComputerChoice();
     result.textContent = gameLogic(option, computerChoice);
-    computerChoiceImage.src = `/images/${computerChoice}.jpg`;
+    computerChoiceImage.src = `images/${computerChoice}.jpg`;
     computerChoiceImageContainer.appendChild(computerChoiceImage);
 }
 const options = document.querySelectorAll(".options div");
